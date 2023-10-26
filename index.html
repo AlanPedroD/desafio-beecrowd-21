@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 1021</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>Ex 1021</h1>
+    <a href="pag.html">
+        clique para ver o erro no beecrowd
+    </a>
+    <br><br>
+<script>
+    let valorDoSaque = Number(prompt('Digite o valor que deseja sacar:'));
+    document.write('NOTAS:' + '<br>');
+
+    let notas = [100, 50, 20, 10, 5, 2];
+    let moedas = [1.00, 0.50, 0.25, 0.10, 0.05, 0.01];
+
+    for (let indice of notas) {
+        let qtdeNotas = Math.floor(valorDoSaque / indice);
+        document.write(`${qtdeNotas} nota(s) de R$ ${indice.toFixed(2)} <br>`);
+        valorDoSaque = valorDoSaque % indice;
+    }
+
+    if (valorDoSaque < 2) {
+        document.write('MOEDAS:' + '<br>');
+        for (let centavos of moedas) {
+            let qtdeMoedas = Math.floor(valorDoSaque / centavos);
+            document.write(`${qtdeMoedas} moeda(s) de R$ ${centavos.toFixed(2)}<br>`);
+            valorDoSaque = valorDoSaque % centavos;
+        }
+    }
+
+</script>
+</body>
+</html>
